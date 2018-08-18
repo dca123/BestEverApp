@@ -2,22 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 import { Constants } from 'expo';
-
-const ScoreView = () => (
-  <View style={[styles.container, { backgroundColor: '#777171' }]}>
-    <Text style = {[{
-      alignItems: 'center',
-      justifyContent: 'center'}]}>
-      Test
-    </Text>
-  </View>
-);
-const CalendarView = () => (
-  <View style={[styles.container, { backgroundColor: '#777171' }]} />
-);
-const RulesView = () => (
-  <View style={[styles.container, { backgroundColor: '#777171' }]} />
-);
+import styles from './panels/panel_styles';
+import Calendar from './panels/calendar_panel';
+import Rules from './panels/rules_panel';
+import Score from './panels/score_panel';
 
 export default class App extends React.Component {
   state = {
@@ -46,9 +34,9 @@ export default class App extends React.Component {
         navigationState={this.state}
         renderTabBar= {this._renderTabBar}
         renderScene={SceneMap({
-          score: ScoreView,
-          calendar: CalendarView,
-          rules: RulesView
+          score: Score,
+          calendar: Calendar,
+          rules: Rules
         })}
         onIndexChange={index => this.setState({ index })}
         initialLayout={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
@@ -56,17 +44,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  header: {
-    backgroundColor: '#474040',
-    paddingTop: Constants.statusBarHeight,
-  },
-});
