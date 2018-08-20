@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, StatusBar, Text, View, Dimensions } from 'react-native';
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 import { Constants } from 'expo';
 import styles from './panels/panel_styles';
@@ -30,6 +30,7 @@ export default class App extends React.Component {
 
   render() {
     return ( 
+    
       <TabView
         navigationState={this.state}
         renderTabBar= {this._renderTabBar}
@@ -39,8 +40,9 @@ export default class App extends React.Component {
           rules: Rules
         })}
         onIndexChange={index => this.setState({ index })}
-        initialLayout={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height}}
-      />
-    );
+        initialLayout={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height}} />
+        
+
+        );
   }
 }
