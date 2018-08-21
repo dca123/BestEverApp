@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, ScrollView } from 'react-native'
+import { StyleSheet, Text, ScrollView, View, RefreshControl } from 'react-native'
 import axios from 'axios'
 
 // import dsp from './Crests/dsp.jpg'
@@ -12,8 +12,12 @@ export default class App extends React.Component {
 
     // Store house data
     this.state = {
-      houses: []
+      houses: false,
+      refreshing: false
     }
+
+    // Bind state functions
+    this.refresh = this.refresh.bind(this)
   }
 
   componentDidMount () {
@@ -24,9 +28,28 @@ export default class App extends React.Component {
       })
   }
 
+  refresh () {
+    axios
+      .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/G2:J?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
+      .then((response) => {
+        this.setState({ houses: response.data.values })
+      })
+  }
+
   render () {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView
+        style={styles.container}
+        horizontal={false}
+        refreshControl={
+          <RefreshControl
+            colors={['#fff']}
+            tintColor="#fff"
+            refreshing={this.state.refreshing}
+            onRefresh={this.refresh}
+          />
+        }
+      >
 
         {/* House list */}
         {this.state.houses && this.state.houses.map((house, i) => {
