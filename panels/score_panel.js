@@ -4,6 +4,7 @@ import axios from 'axios'
 
 // import dsp from './Crests/dsp.jpg'
 
+// Components
 import HouseCard from '../components/house_card.js'
 
 export default class App extends React.Component {
@@ -22,8 +23,9 @@ export default class App extends React.Component {
 
   componentDidMount () {
     axios
-      .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/G2:J?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
+      .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/G2:K?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
       .then((response) => {
+        // alert(JSON.stringify(response.data.values))
         this.setState({ houses: response.data.values })
       })
   }
@@ -60,13 +62,15 @@ export default class App extends React.Component {
               house={house[0]}
               score={house[1]}
               color={house[2]}
+              secondary={house[4]}
             />
           )
         })
         }
 
         {/* Bottom padding */}
-        <Text style={{ width: '100%', height: 20 }}></Text>
+        <Text style={{ width: '100%', height: 10 }}></Text>
+
       </ScrollView>
     )
   }
