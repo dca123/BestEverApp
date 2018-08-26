@@ -5,7 +5,7 @@ import { Constants } from 'expo';
 import styles from './panels/panel_styles';
 import Calendar from './panels/calendar_panel';
 import Rules from './panels/rules_panel';
-import Score from './panels/score_panel';
+import Score from './panels/scoreboard/score_panel';
 
 export default class App extends React.Component {
   state = {
