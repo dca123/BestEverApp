@@ -2,11 +2,14 @@ import React from 'react'
 import axios from 'axios'
 import { Text, ScrollView, RefreshControl } from 'react-native'
 
-// Styles
-import styles from './score_styles'
+// Utilities
+import { recordPageView } from '../../utilities/analytics'
 
 // Components
 import HouseCard from './house_card'
+
+// Styles
+import styles from './score_styles'
 
 export default class App extends React.Component {
   constructor (props) {
@@ -24,6 +27,7 @@ export default class App extends React.Component {
 
   // When page loads
   componentDidMount () {
+    recordPageView('Scoreboard-Init')
     axios
       .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/G2:K?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
       .then((response) => {
@@ -33,6 +37,7 @@ export default class App extends React.Component {
 
   // When user pulls to refresh
   refresh () {
+    recordPageView('Scoreboard-Refresh')
     axios
       .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/G2:J?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
       .then((response) => {
