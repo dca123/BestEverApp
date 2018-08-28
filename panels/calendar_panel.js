@@ -29,7 +29,7 @@ export default class Calendar extends React.Component {
 
   componentDidMount () {
     axios
-      .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/Calendar!A2:E?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
+      .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/Calendar!A2:F?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
       .then((response) => {
         this.setState({
           events: response.data.values,
@@ -39,9 +39,8 @@ export default class Calendar extends React.Component {
   }
 
   dayPress (newDay) {
-    this.setState({ selected_day: newDay })
     this.setState({
-      todays_events: this.filterEvents(Array.from(this.state.events), this.state.selected_day)})
+      todays_events: this.filterEvents(Array.from(this.state.events), newDay)})
   }
 
   filterEvents (events, day) {
@@ -58,53 +57,52 @@ export default class Calendar extends React.Component {
   renderEvents () {
     return Array.from(this.state.todays_events).map((event, i) => {
       return (
-        <View key = {i} style={{
-          backgroundColor: '#483F40',
+        <View key = {i}
+          style={{
+            backgroundColor: '#483F40',
 
-          marginLeft: 10,
-          marginRight: 10,
-          marginBottom: 20,
-          borderRadius: 4,
-          paddingTop: 10,
-          paddingBottom: 10,
-          paddingRight: 10,
-          paddingLeft: 10,
+            marginLeft: 10,
+            marginRight: 10,
+            marginBottom: 20,
+            borderRadius: 4,
+            paddingTop: 10,
+            paddingBottom: 10,
+            paddingRight: 10,
+            paddingLeft: 10,
 
-          flex: 1,
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'space-between'
-        }}>
-          <Text> {event[0]} </Text>
-          <Text> {event[1]} </Text>
-          <Text> {event[2]} </Text>
-          <Text> {event[3]} </Text>
-          <Text> {event[4]} </Text>
+            flexGrow: 1,
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+          <Text style={{color: '#ffffff'}}> {event[0]} </Text>
+          <Text style={{color: '#ffffff'}}> {event[1]} </Text>
+          <Text style={{color: '#ffffff'}}> {event[3]} </Text>
+          <Text style={{color: '#ffffff'}}> {event[4]} </Text>
+          <Text style={{color: '#ffffff'}}> {event[5]} </Text>
         </View>
       )
     })
   }
 
-  render () {/*
+  render () {
     return (
       <View style = {{
         backgroundColor: '#777171',
         justifyContent: 'flex-start',
         flexDirection: 'column',
-        flex: 1,
         alignItems: 'stretch'
       }}>
         <FlatList
           style = {{
-            paddingBottom: 50,
+            paddingBottom: 5,
             paddingTop: 5
           }}
           contentContainerStyle = {{
             justifyContent: 'space-evenly',
             flexDirection: 'row',
             alignItems: 'center',
-            flexGrow: 1,
-            height: 40
+            flexGrow: 1
           }}
           data={ this.state.days }
           scrollEnabled={false}
@@ -127,19 +125,23 @@ export default class Calendar extends React.Component {
               }}>
                 {item.display}
               </Text>
-            </View>}>
+            </View>
+          }>
         </FlatList>
-
         <View
           style = {[{
-            backgroundColor: '#303030',
-            flexDirection: 'column'
+            backgroundColor: '#777171',
+            flexDirection: 'column',
+            flexGrow: 2
 
           }]}>
           {this.renderEvents()}
         </View>
       </View>
+
     )
   }
-  */
 }
+/*
+
+    ) */

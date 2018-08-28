@@ -12,7 +12,7 @@ import styles from './panels/panel_styles';
 
 export default class App extends React.Component {
   state = {
-    index: 0,
+    index: 1,
     routes: [
       { key: 'score',  title: 'Scoreboard' },
       { key: 'calendar', title: 'Calendar' },
