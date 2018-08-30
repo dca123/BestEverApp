@@ -3,7 +3,7 @@ import { Text, Dimensions } from 'react-native';
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 
 // Components
-import Calendar from './panels/calendar_panel';
+import Calendar from './panels/calendar/calendar_panel';
 import Rules from './panels/rules_panel';
 import Score from './panels/scoreboard/score_panel';
 

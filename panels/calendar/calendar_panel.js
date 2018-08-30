@@ -1,8 +1,11 @@
 import React from 'react'
-import { StyleSheet, Text, View, Dimensions, FlatList } from 'react-native'
+import { StyleSheet, Text, View, Dimensions, FlatList, TouchableOpacity, ScrollView } from 'react-native'
 import { Constants } from 'expo'
-import styles from './panel_styles'
+import styles from '../panel_styles'
 import axios from 'axios'
+
+// Components
+import EventCard from './event_card'
 
 export default class Calendar extends React.Component {
   constructor (props) {
@@ -19,7 +22,7 @@ export default class Calendar extends React.Component {
         {key: '2', display: 'Mon', date: '9/17'},
         {key: '3', display: 'Tue', date: '9/18'},
         {key: '4', display: 'Wed', date: '9/19'},
-        {key: '5', display: 'Th', date: '9/20'},
+        {key: '5', display: 'Thu', date: '9/20'},
         {key: '6', display: 'Fri', date: '9/21'},
         {key: '7', display: 'Sat', date: '9/22'} ]
     }
@@ -39,6 +42,7 @@ export default class Calendar extends React.Component {
   }
 
   dayPress (newDay) {
+    this.setState({ todays_events: false })
     this.setState({
       todays_events: this.filterEvents(Array.from(this.state.events), newDay)})
   }
@@ -57,30 +61,14 @@ export default class Calendar extends React.Component {
   renderEvents () {
     return Array.from(this.state.todays_events).map((event, i) => {
       return (
-        <View key = {i}
-          style={{
-            backgroundColor: '#483F40',
-
-            marginLeft: 10,
-            marginRight: 10,
-            marginBottom: 20,
-            borderRadius: 4,
-            paddingTop: 10,
-            paddingBottom: 10,
-            paddingRight: 10,
-            paddingLeft: 10,
-
-            flexGrow: 1,
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-          }}>
-          <Text style={{color: '#ffffff'}}> {event[0]} </Text>
-          <Text style={{color: '#ffffff'}}> {event[1]} </Text>
-          <Text style={{color: '#ffffff'}}> {event[3]} </Text>
-          <Text style={{color: '#ffffff'}}> {event[4]} </Text>
-          <Text style={{color: '#ffffff'}}> {event[5]} </Text>
-        </View>
+        <EventCard
+          name = {event[0]}
+          date = {event[1]}
+          time = {event[3]}
+          location = {event[4]}
+          details = {event[5]}
+          key = {i}
+        ></EventCard>
       )
     })
   }
@@ -91,12 +79,14 @@ export default class Calendar extends React.Component {
         backgroundColor: '#777171',
         justifyContent: 'flex-start',
         flexDirection: 'column',
+        flexGrow: 1,
         alignItems: 'stretch'
       }}>
         <FlatList
           style = {{
             paddingBottom: 5,
-            paddingTop: 5
+            paddingTop: 5,
+            flex: 1
           }}
           contentContainerStyle = {{
             justifyContent: 'space-evenly',
@@ -108,11 +98,11 @@ export default class Calendar extends React.Component {
           scrollEnabled={false}
           horizontal
           renderItem={({item}) =>
-            <View
-              onTouchStart= {this.dayPress(item.key)}
+            <TouchableOpacity
+              title = {item.display}
+              onPress={ () => { this.dayPress(item.key) }}
               style = {[{
                 backgroundColor: '#232323',
-                flexDirection: 'row',
                 borderRadius: 50,
                 height: 40,
                 width: 40,
@@ -121,22 +111,21 @@ export default class Calendar extends React.Component {
               }]}>
               <Text style = {{
                 color: '#fff',
-                paddingTop: 10
+                alignSelf: 'center'
               }}>
                 {item.display}
               </Text>
-            </View>
+            </TouchableOpacity>
           }>
         </FlatList>
-        <View
+        <ScrollView
           style = {[{
             backgroundColor: '#777171',
             flexDirection: 'column',
-            flexGrow: 2
-
+            flex: 10
           }]}>
-          {this.renderEvents()}
-        </View>
+          {this.state.todays_events && this.renderEvents()}
+        </ScrollView>
       </View>
 
     )
