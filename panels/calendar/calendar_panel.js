@@ -118,19 +118,21 @@ export default class Calendar extends React.Component {
             </TouchableOpacity>
           }>
         </FlatList>
-        <ScrollView
-          style = {[{
-            backgroundColor: '#777171',
-            flexDirection: 'column',
+        <View
+          style = {{
             flex: 10
-          }]}>
-          {this.state.todays_events && this.renderEvents()}
-        </ScrollView>
+          }}
+        >
+          <ScrollView
+            contentContainerStyle = {[{
+              backgroundColor: '#777171',
+              flexDirection: 'column'
+            }]}>
+            {this.state.todays_events && this.renderEvents()}
+          </ScrollView>
+        </View>
       </View>
 
     )
   }
 }
-/*
-
-    ) */
