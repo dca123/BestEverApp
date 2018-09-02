@@ -1,7 +1,7 @@
 
-import React from 'react';
-import { Text, View, Dimensions, TouchableOpacity } from 'react-native';
-import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
+import React from 'react'
+import { Text, View, Dimensions, TouchableOpacity } from 'react-native'
+import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 
 // Components
 import Calendar from './panels/calendar/calendar_panel'
@@ -34,7 +34,7 @@ export default class App extends React.Component {
       <TabBar
         {...props}
         renderLabel={ (route) =>
-          <Text style ={{ color: '#fff', margin: 15 }}>
+          <Text style ={{ color: '#fff', paddingBottom: 15 }}>
             {route.route.title}
           </Text>
         }
@@ -46,9 +46,9 @@ export default class App extends React.Component {
   render () {
     return (
       <View
-      style = {{
-        flexGrow: 1
-      }}
+        style = {{
+          flexGrow: 1
+        }}
       >
         <View
           style = {{
@@ -60,24 +60,24 @@ export default class App extends React.Component {
             flexDirection: 'row',
             justifyContent: 'space-between'
           }}
-          >
+        >
           <Text style = {{
             fontSize: 25,
             color: '#fff'
-          }}> Greek Week 2018 
+          }}> Greek Week 2018
           </Text>
-          <TouchableOpacity style = {{ paddingRight: 10, paddingTop: 5}}>
+          <TouchableOpacity style = {{paddingRight: 10, paddingTop: 5}}>
             <View
-            style = {{
-              alignSelf: 'flex-end',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: 25,
-              height: 25,
-              borderRadius: 100,
-              backgroundColor: '#fff'
-            }}>
-            <Text style = {{color: '#474040', fontSize: 17, fontStyle: 'italic', fontFamily: 'serif'}}> i </Text>
+              style = {{
+                alignSelf: 'flex-end',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 25,
+                height: 25,
+                borderRadius: 100,
+                backgroundColor: '#fff'
+              }}>
+              <Text style = {{color: '#474040', fontSize: 17, fontStyle: 'italic', fontFamily: 'serif'}}> i </Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -93,8 +93,8 @@ export default class App extends React.Component {
             rules: Rules
           })}
           onIndexChange={index => this.setState({ index })}
-          initialLayout={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height}}/>
+          initialLayout={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}/>
       </View>
-    );
+    )
   }
 }

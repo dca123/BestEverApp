@@ -11,6 +11,7 @@ export default StyleSheet.create({
     justifyContent: 'center'
   },
   header: {
+    height: 50,
     backgroundColor: '#474040',
     paddingTop: 5,
     paddingBottom: 5

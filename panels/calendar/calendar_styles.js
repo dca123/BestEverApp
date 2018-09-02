@@ -5,7 +5,7 @@ export default StyleSheet.create({
     backgroundColor: '#777171',
     justifyContent: 'flex-start',
     flexDirection: 'column',
-    flexGrow: 1,
+    flex: 30,
     alignItems: 'stretch'
   },
   dayListContainer: {
