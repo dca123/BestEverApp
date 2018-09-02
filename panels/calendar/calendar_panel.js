@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Dimensions, FlatList, TouchableOpacity, ScrollView } from 'react-native'
 import { Constants } from 'expo'
-import styles from '../panel_styles'
+import styles from './calendar_styles'
 import axios from 'axios'
 
 // Utilities
@@ -89,25 +89,10 @@ export default class Calendar extends React.Component {
   render () {
     let dayDisplay = this.state.selected_day ? this.state.selected_day.full + this.state.selected_day.key : null
     return (
-      <View style = {{
-        backgroundColor: '#777171',
-        justifyContent: 'flex-start',
-        flexDirection: 'column',
-        flexGrow: 1,
-        alignItems: 'stretch'
-      }}>
+      <View style = {styles.container}>
         <FlatList
-          style = {{
-            paddingBottom: 5,
-            paddingTop: 5,
-            flex: 1
-          }}
-          contentContainerStyle = {{
-            justifyContent: 'space-evenly',
-            flexDirection: 'row',
-            alignItems: 'center',
-            flexGrow: 1
-          }}
+          style = {styles.dayListContainer}
+          contentContainerStyle = {styles.dayList}
           data={ days }
           scrollEnabled={false}
           horizontal
@@ -115,14 +100,7 @@ export default class Calendar extends React.Component {
             <TouchableOpacity
               title = {item.short}
               onPress={ () => { this.dayPress(item) }}
-              style = {[{
-                backgroundColor: '#232323',
-                borderRadius: 50,
-                height: 40,
-                width: 40,
-                alignContent: 'center',
-                justifyContent: 'center'
-              }]}>
+              style = {styles.dayButton}>
               <Text style = {{
                 color: '#fff',
                 alignSelf: 'center'
@@ -137,14 +115,14 @@ export default class Calendar extends React.Component {
             flex: 10
           }}
         >
-          <View>
+          <View
+            style = {{
+              borderBottomColor: '#483F40',
+              borderBottomWidth: 1,
+              marginBottom: 10
+            }}>
             <Text
-              style = {{
-                fontSize: 20,
-                color: '#fff',
-                paddingBottom: 15,
-                paddingLeft: 10
-              }}
+              style = {styles.currentDateDisplay}
             >
               {dayDisplay}
             </Text>

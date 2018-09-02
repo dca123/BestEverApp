@@ -30,7 +30,7 @@ export default StyleSheet.create({
   currentDateDisplay: {
     fontSize: 20,
     color: '#fff',
-    paddingBottom: 15,
+    marginBottom: 5,
     paddingLeft: 10
   },
 
