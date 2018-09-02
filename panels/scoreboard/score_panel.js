@@ -75,7 +75,7 @@ export default class App extends React.Component {
         })}
 
         {/* Bottom padding */}
-        <Text style={{ width: '100%', height: 10 }}></Text>
+        <Text style={{ width: '100%', height: 15 }}></Text>
 
       </ScrollView>
     )

@@ -25,6 +25,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "accordion-collapse-react-native": "^0.1.6",
     "expo": "^27.0.1",
     "install": "^0.12.1",
     "npm": "^6.4.0",

@@ -2,25 +2,26 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
   container: {
-    paddingTop: 10,
+    // paddingTop: 10,
     overflow: 'scroll',
     backgroundColor: '#777171'
   },
   rank: {
-    fontSize: 28,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#FFEB3C'
   },
   rank_append: {
-    fontSize: 24,
+    fontSize: 20,
     color: '#FFEB3C'
   },
   card: {
     backgroundColor: '#483F40',
 
-    marginLeft: 10,
+    marginTop: 15,
+    marginLeft: 15,
     marginRight: 10,
-    marginBottom: 20,
+    marginBottom: 0,
     borderRadius: 4,
     paddingTop: 10,
     paddingBottom: 10,
@@ -41,10 +42,10 @@ export default StyleSheet.create({
   },
 
   f22: {
-    fontSize: 22
+    fontSize: 18
   },
   f24: {
-    fontSize: 24
+    fontSize: 22
   },
   bold: {
     fontWeight: 'bold'
