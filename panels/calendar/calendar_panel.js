@@ -4,53 +4,64 @@ import { Constants } from 'expo'
 import styles from '../panel_styles'
 import axios from 'axios'
 
+// Utilities
+import { recordPageView } from '../../utilities/analytics'
+
 // Components
 import EventCard from './event_card'
+
+// Days of greekweek
+const days =
+[ {key: '9/15', short: 'Sat', full: 'Saturday '},
+  {key: '9/16', short: 'Sun', full: 'Sunday '},
+  {key: '9/17', short: 'Mon', full: 'Monday '},
+  {key: '9/18', short: 'Tue', full: 'Tuesday '},
+  {key: '9/19', short: 'Wed', full: 'Wendesday '},
+  {key: '9/20', short: 'Thu', full: 'Thursday '},
+  {key: '9/21', short: 'Fri', full: 'Friday '},
+  {key: '9/22', short: 'Sat', full: 'Saturday '} ]
 
 export default class Calendar extends React.Component {
   constructor (props) {
     super(props)
-
+    var currentDate = new Date()
+    var currentDateKey = (currentDate.getMonth() + 1) + '/' + (currentDate.getDate() + 19)
     // Store house data
     this.state = {
-      selected_day: '0',
       events: false,
       todays_events: false,
-      days:
-      [ {key: '0', display: 'Sat', date: '9/15'},
-        {key: '1', display: 'Sun', date: '9/16'},
-        {key: '2', display: 'Mon', date: '9/17'},
-        {key: '3', display: 'Tue', date: '9/18'},
-        {key: '4', display: 'Wed', date: '9/19'},
-        {key: '5', display: 'Thu', date: '9/20'},
-        {key: '6', display: 'Fri', date: '9/21'},
-        {key: '7', display: 'Sat', date: '9/22'} ]
+      selected_day: days.find(d => d.key == currentDateKey)
     }
 
     this.filterEvents = this.filterEvents.bind(this)
   }
 
   componentDidMount () {
+    recordPageView('Scoreboard-Init')
     axios
       .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/Calendar!A2:F?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
       .then((response) => {
         this.setState({
           events: response.data.values,
-          todays_events: this.filterEvents(response.data.values, this.state.selected_day)
+          todays_events: this.filterEvents(response.data.values, this.state.selected_day.key)
         })
       })
   }
 
   dayPress (newDay) {
-    this.setState({ todays_events: false })
     this.setState({
-      todays_events: this.filterEvents(Array.from(this.state.events), newDay)})
+      selected_day: newDay,
+      todays_events: false
+    })
+    this.setState({
+      todays_events: this.filterEvents(Array.from(this.state.events), newDay.key)
+    })
   }
 
-  filterEvents (events, day) {
+  filterEvents (events, dayKey) {
     let today = []
     for (event of events) {
-      if (event[2] === day) {
+      if (event[1] === dayKey) {
         today.push(event)
       }
     }
@@ -59,21 +70,24 @@ export default class Calendar extends React.Component {
   }
 
   renderEvents () {
-    return Array.from(this.state.todays_events).map((event, i) => {
-      return (
-        <EventCard
-          name = {event[0]}
-          date = {event[1]}
-          time = {event[3]}
-          location = {event[4]}
-          details = {event[5]}
-          key = {i}
-        ></EventCard>
-      )
-    })
+    return (
+      Array.from(this.state.todays_events).map((event, i) => {
+        return (
+          <EventCard
+            name = {event[0]}
+            date = {event[1]}
+            time = {event[2]}
+            location = {event[3]}
+            details = {event[4]}
+            key = {i + event[1]}
+          ></EventCard>
+        )
+      })
+    )
   }
 
   render () {
+    let dayDisplay = this.state.selected_day ? this.state.selected_day.full + this.state.selected_day.key : null
     return (
       <View style = {{
         backgroundColor: '#777171',
@@ -94,13 +108,13 @@ export default class Calendar extends React.Component {
             alignItems: 'center',
             flexGrow: 1
           }}
-          data={ this.state.days }
+          data={ days }
           scrollEnabled={false}
           horizontal
           renderItem={({item}) =>
             <TouchableOpacity
-              title = {item.display}
-              onPress={ () => { this.dayPress(item.key) }}
+              title = {item.short}
+              onPress={ () => { this.dayPress(item) }}
               style = {[{
                 backgroundColor: '#232323',
                 borderRadius: 50,
@@ -113,7 +127,7 @@ export default class Calendar extends React.Component {
                 color: '#fff',
                 alignSelf: 'center'
               }}>
-                {item.display}
+                {item.short}
               </Text>
             </TouchableOpacity>
           }>
@@ -123,6 +137,18 @@ export default class Calendar extends React.Component {
             flex: 10
           }}
         >
+          <View>
+            <Text
+              style = {{
+                fontSize: 20,
+                color: '#fff',
+                paddingBottom: 15,
+                paddingLeft: 10
+              }}
+            >
+              {dayDisplay}
+            </Text>
+          </View>
           <ScrollView
             contentContainerStyle = {[{
               backgroundColor: '#777171',

@@ -12,6 +12,7 @@ export default StyleSheet.create({
   },
   header: {
     backgroundColor: '#474040',
-    paddingTop: Constants.statusBarHeight
+    paddingTop: 5,
+    paddingBottom: 5
   }
 })

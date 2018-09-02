@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text, View, TouchableOpacity } from 'react-native'
+import styles from './calendar_styles'
 
 // Styles
 // import styles from './score_styles'
@@ -13,6 +14,10 @@ export default class EventCard extends React.Component {
       expanded: false
     }
   }
+  resetExpands () {
+    this.setState({expanded: false})
+  }
+
   detailtoggle () {
     let old = this.state.expanded
     this.setState({expanded: !old})
@@ -23,34 +28,29 @@ export default class EventCard extends React.Component {
         onPress = { () => { this.detailtoggle() } }
       >
         <View
-          style={{
-            backgroundColor: '#483F40',
-
-            marginLeft: 10,
-            marginRight: 10,
-            marginBottom: 20,
-            borderRadius: 4,
-            paddingTop: 10,
-            paddingBottom: 10,
-            paddingRight: 10,
-            paddingLeft: 10,
-            flexDirection: 'column',
-            flexGrow: 1,
-            alignItems: 'center',
-            justifyContent: 'space-between'
-          }}>
+          style={styles.eventCard}>
           <View
-            style={{
+            style={{ // main details
               flexDirection: 'row'
             }}
+            justifyContent = 'space-between'
           >
-            <Text style={{color: '#ffffff'}}> {this.props.name} </Text>
-            <Text style={{color: '#ffffff'}}> {this.props.date} </Text>
-            <Text style={{color: '#ffffff'}}> {this.props.time} </Text>
-            <Text style={{color: '#ffffff'}}> {this.props.location} </Text>
+            <Text
+              style={{ // event name
+                color: '#ffffff',
+                fontSize: 20
+              }}
+            > {this.props.name} </Text>
+            <Text
+              style={{
+                color: '#ffffff'
+              }} // time
+            > {this.props.time} </Text>
           </View>
-          {this.state.expanded
-            ? <View>
+          {this.state.expanded // expanded details
+            ? <View
+              justifyContent = 'flex-start'>
+              <Text style={{color: '#ffffff'}}> Location: {this.props.location} {'\n'} </Text>
               <Text style={{color: '#ffffff'}}> {this.props.details} </Text>
             </View>
             : null }
