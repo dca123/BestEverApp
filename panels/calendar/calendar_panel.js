@@ -42,9 +42,14 @@ export default class Calendar extends React.Component {
       .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/Calendar!A2:F?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
       .then((response) => {
         this.setState({
-          events: response.data.values,
-          todays_events: this.filterEvents(response.data.values, this.state.selected_day.key)
+          events: response.data.values
         })
+
+        if (this.state.selected_day) {
+          this.setState({
+            todays_events: this.filterEvents(response.data.values, this.state.selected_day.key)
+          })
+        }
       })
   }
 
@@ -104,9 +109,7 @@ export default class Calendar extends React.Component {
               <Text style = {{
                 color: '#fff',
                 alignSelf: 'center'
-              }}>
-                {item.short}
-              </Text>
+              }}>{item.short}</Text>
             </TouchableOpacity>
           }>
         </FlatList>
