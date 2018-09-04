@@ -2,19 +2,21 @@
 import React from 'react'
 import { Text, View, Dimensions, TouchableOpacity } from 'react-native'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
+import { createStackNavigator } from 'react-navigation'
 
 // Components
 import Calendar from './panels/calendar/calendar_panel'
 import Rules from './panels/rules_panel/rules_panel'
 import Score from './panels/scoreboard/score_panel'
+import InfoScreen from './panels/info_screen/info'
 
 // Styles
 import styles from './panels/panel_styles'
 
-export default class App extends React.Component {
+class HomeScreen extends React.Component {
   constructor (props) {
     super(props)
-
+    
     // Store house data
     this.state = {
       index: 0,
@@ -24,10 +26,12 @@ export default class App extends React.Component {
         { key: 'rules', title: 'Rule Book' }
       ]
     }
-
+    
     // Bind state functions
     this._renderTabBar = this.renderTabBar.bind(this)
   }
+
+  static navigationOptions = { title: 'Home', header: null}
 
   renderTabBar (props) {
     return (
@@ -66,7 +70,10 @@ export default class App extends React.Component {
             color: '#fff'
           }}> Greek Week 2018
           </Text>
-          <TouchableOpacity style = {{paddingRight: 10, paddingTop: 5}}>
+          <TouchableOpacity
+            onPress = {() => this.props.navigation.navigate('Info')}
+            style = {{paddingRight: 10, paddingTop: 5}}
+          >
             <View
               style = {{
                 alignSelf: 'flex-end',
@@ -98,3 +105,8 @@ export default class App extends React.Component {
     )
   }
 }
+
+export default createStackNavigator({
+  Home: { screen: HomeScreen },
+  Info: { screen: InfoScreen }
+})
