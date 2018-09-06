@@ -1,6 +1,7 @@
 {
   "name": "GWapp",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Everything you need to be prepared for Greek Week 2018",
   "private": true,
   "devDependencies": {
     "eslint": "^5.4.0",
@@ -35,6 +36,7 @@
     "react-native-google-analytics-bridge": "^5.7.1",
     "react-native-tab-view": "^1.0.2",
     "react-native-unique-id": "^1.0.4",
-    "react-native-web": "^0.8.9"
+    "react-native-web": "^0.8.9",
+    "react-navigation": "^2.12.1"
   }
 }

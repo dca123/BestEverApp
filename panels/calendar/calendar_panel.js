@@ -25,7 +25,7 @@ export default class Calendar extends React.Component {
   constructor (props) {
     super(props)
     var currentDate = new Date()
-    var currentDateKey = (currentDate.getMonth() + 1) + '/' + (currentDate.getDate() + 19)
+    var currentDateKey = (currentDate.getMonth() + 1) + '/' + (currentDate.getDate())
     // Store house data
     this.state = {
       events: false,
@@ -83,7 +83,8 @@ export default class Calendar extends React.Component {
             date = {event[1]}
             time = {event[2]}
             location = {event[3]}
-            details = {event[4]}
+            locationLink = {event[4]}
+            details = {event[5]}
             key = {i + event[1]}
           ></EventCard>
         )

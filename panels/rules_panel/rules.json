@@ -642,11 +642,6 @@
           {
             "id": 3,
             "name": "Rock Drag",
-            "Rules": ""
-          },
-          {
-            "id": 4,
-            "name": "Rope Climb",
             "Rules": [
               {
                 "id": 0,
@@ -663,6 +658,20 @@
               {
                 "id": 3,
                 "subrule": "If the participant is unable to pull the rock through the 50 foot line, then the distance which the rock traveled  will be measured and used to ranked all participants who could not complete the pull."
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "name": "Rope Climb",
+            "Rules": [
+              {
+                "id": 0,
+                "subrule": "The contestants will climb a rope and touch the top. Time will stop once the top is struck and seen by the Interfraternity Council Representative."
+              },
+              {
+                "id": 1,
+                "subrule": "The Interfraternity Council will supply the equipment."
               }
             ]
           },

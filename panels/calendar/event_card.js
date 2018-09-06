@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Image, View, TouchableOpacity } from 'react-native'
+import { Text, Image, View, TouchableOpacity, Linking, TouchableWithoutFeedback } from 'react-native'
 import styles from './calendar_styles'
 
 // Images
@@ -54,7 +54,11 @@ export default class EventCard extends React.Component {
           {this.state.expanded // expanded details
             ? <View
               justifyContent = 'flex-start'>
-              <Text style={{color: '#ffffff'}}>Location: {this.props.location}{'\n'}</Text>
+              <TouchableWithoutFeedback>
+                <TouchableOpacity onPress = {() => Linking.openURL(this.props.locationLink)}>
+                  <Text style={{color: '#ffffff'}}>Location: <Text style = {{color: 'lightblue'}}>{this.props.location}{'\n'}</Text></Text>
+                </TouchableOpacity>
+              </TouchableWithoutFeedback>
               <Text style={{color: '#ffffff'}}>{this.props.details}</Text>
             </View>
             : null }
