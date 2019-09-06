@@ -1,112 +1,130 @@
-
-import React from 'react'
-import { Text, View, Dimensions, TouchableOpacity } from 'react-native'
-import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
-import { createStackNavigator } from 'react-navigation'
+import React from "react";
+import { Text, View, Dimensions, TouchableOpacity } from "react-native";
+import { TabView, TabBar, SceneMap } from "react-native-tab-view";
+import { createStackNavigator } from "react-navigation";
 
 // Components
-import Calendar from './panels/calendar/calendar_panel'
-import Rules from './panels/rules_panel/rules_panel'
-import Score from './panels/scoreboard/score_panel'
-import InfoScreen from './panels/info_screen/info'
+import Calendar from "./panels/calendar/calendar_panel";
+import Rules from "./panels/rules_panel/rules_panel";
+import Score from "./panels/scoreboard/score_panel";
+import Sororities from "./panels/scoreboard/sororities_panel";
+import InfoScreen from "./panels/info_screen/info";
 
 // Styles
-import styles from './panels/panel_styles'
+import styles from "./panels/panel_styles";
 
 class HomeScreen extends React.Component {
-  constructor (props) {
-    super(props)
-    
+  constructor(props) {
+    super(props);
+
     // Store house data
     this.state = {
       index: 0,
       routes: [
-        { key: 'score', title: 'Scoreboard' },
-        { key: 'calendar', title: 'Calendar' },
-        { key: 'rules', title: 'Rule Book' }
+        { key: "score", title: "Fraternities" },
+        { key: "sororities", title: "Sororities" },
+        { key: "calendar", title: "Calendar" },
+        { key: "rules", title: "Rule Book" }
       ]
-    }
-    
+    };
+
     // Bind state functions
-    this._renderTabBar = this.renderTabBar.bind(this)
+    this._renderTabBar = this.renderTabBar.bind(this);
   }
 
-  static navigationOptions = { title: 'Home', header: null}
+  static navigationOptions = { title: "Home", header: null };
 
-  renderTabBar (props) {
+  renderTabBar(props) {
     return (
       <TabBar
         {...props}
-        renderLabel={ (route) =>
-          <Text style ={{ color: '#fff', paddingBottom: 15 }}>
+        renderLabel={route => (
+          <Text style={{ color: "#fff", paddingBottom: 15 }}>
             {route.route.title}
           </Text>
-        }
+        )}
         style={styles.header}
       />
-    )
+    );
   }
 
-  render () {
+  render() {
     return (
       <View
-        style = {{
+        style={{
           flexGrow: 1
         }}
       >
         <View
-          style = {{
+          style={{
             flex: 2,
-            paddingTop: 25,
-            backgroundColor: '#474040',
+            // height: 100,
+            // padding:
+            paddingTop: 50,
+            backgroundColor: "red",
             borderBottomWidth: 1,
-            borderBottomColor: '#3d3737',
-            flexDirection: 'row',
-            justifyContent: 'space-between'
+            borderBottomColor: "#3d3737",
+            flexDirection: "row",
+            justifyContent: "space-between"
           }}
         >
-          <Text style = {{
-            fontSize: 25,
-            color: '#fff'
-          }}> Greek Week 2018
+          <Text
+            style={{
+              fontSize: 25,
+              color: "#fff"
+            }}
+          >
+            {" "}
+            Greek Week 2018
           </Text>
           <TouchableOpacity
-            onPress = {() => this.props.navigation.navigate('Info')}
-            style = {{paddingRight: 10, paddingTop: 5}}
+            onPress={() => this.props.navigation.navigate("Info")}
+            style={{ paddingRight: 10, paddingTop: 5 }}
           >
             <View
-              style = {{
-                alignSelf: 'flex-end',
-                alignItems: 'center',
-                justifyContent: 'center',
+              style={{
+                alignSelf: "flex-end",
+                alignItems: "center",
+                justifyContent: "center",
                 width: 25,
                 height: 25,
                 borderRadius: 100,
-                backgroundColor: '#fff'
-              }}>
-              <Text style = {{color: '#474040', fontSize: 17, fontStyle: 'italic', fontFamily: 'serif'}}> i </Text>
+                backgroundColor: "#fff"
+              }}
+            >
+              <Text
+                style={{ color: "#474040", fontSize: 17, fontStyle: "italic" }}
+              >
+                {" "}
+                i{" "}
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
         <TabView
-          style = {{
+          style={{
             flex: 30
           }}
           navigationState={this.state}
-          renderTabBar= {this._renderTabBar}
+          renderTabBar={this._renderTabBar}
           renderScene={SceneMap({
             score: Score,
+            sororities: Sororities,
             calendar: Calendar,
             rules: Rules
           })}
           onIndexChange={index => this.setState({ index })}
-          initialLayout={{width: Dimensions.get('window').width, height: Dimensions.get('window').height}}/>
+          initialLayout={{
+            width: Dimensions.get("window").width,
+            height: Dimensions.get("window").height
+          }}
+        />
       </View>
-    )
+    );
   }
 }
 
 export default createStackNavigator({
   Home: { screen: HomeScreen },
   Info: { screen: InfoScreen }
-})
+});
