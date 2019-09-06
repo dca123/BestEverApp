@@ -1,5 +1,12 @@
 import React from "react";
-import { Text, View, Dimensions, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  Dimensions,
+  TouchableOpacity,
+  Platform,
+  StatusBar
+} from "react-native";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
 import { createStackNavigator } from "react-navigation";
 
@@ -58,10 +65,11 @@ class HomeScreen extends React.Component {
         <View
           style={{
             flex: 2,
-            // height: 100,
-            // padding:
-            paddingTop: 50,
-            backgroundColor: "red",
+            paddingTop: 40,
+            paddingLeft: 20,
+            paddingRight: 20,
+            paddingBottom: 0,
+            backgroundColor: "#474040",
             borderBottomWidth: 1,
             borderBottomColor: "#3d3737",
             flexDirection: "row",
@@ -75,11 +83,11 @@ class HomeScreen extends React.Component {
             }}
           >
             {" "}
-            Greek Week 2018
+            Greek Week 2019
           </Text>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate("Info")}
-            style={{ paddingRight: 10, paddingTop: 5 }}
+            // style={{ paddingRight: 10, paddingTop: 5 }}
           >
             <View
               style={{
