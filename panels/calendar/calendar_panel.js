@@ -12,14 +12,14 @@ import EventCard from './event_card'
 
 // Days of greekweek
 const days =
-[ {key: '9/15', short: 'Sat', full: 'Saturday '},
-  {key: '9/16', short: 'Sun', full: 'Sunday '},
-  {key: '9/17', short: 'Mon', full: 'Monday '},
-  {key: '9/18', short: 'Tue', full: 'Tuesday '},
-  {key: '9/19', short: 'Wed', full: 'Wendesday '},
-  {key: '9/20', short: 'Thu', full: 'Thursday '},
-  {key: '9/21', short: 'Fri', full: 'Friday '},
-  {key: '9/22', short: 'Sat', full: 'Saturday '} ]
+[ {key: '9/7', short: 'Sat', full: 'Saturday '},
+  {key: '9/8', short: 'Sun', full: 'Sunday '},
+  {key: '9/9', short: 'Mon', full: 'Monday '},
+  {key: '9/10', short: 'Tue', full: 'Tuesday '},
+  {key: '9/11', short: 'Wed', full: 'Wendesday '},
+  {key: '9/12', short: 'Thu', full: 'Thursday '},
+  {key: '9/13', short: 'Fri', full: 'Friday '},
+  {key: '9/24', short: 'Sat', full: 'Saturday '} ]
 
 export default class Calendar extends React.Component {
   constructor (props) {

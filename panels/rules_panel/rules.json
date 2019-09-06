@@ -87,7 +87,7 @@
               },
               {
                 "id": 4,
-                "subrule": "The course will consist of cones. Chariots must circle the cones without knocking them over. Knocking the cones over can result in 3-second penalty, 10-second penalty, or disqualification depending on the severity of the offense. This is up to the discretion of the Council Representative judging the event."
+                "subrule": "The course will consist of cones. Chariots must circle the cones without knocking them over.  Both wheels of the chariot must round the cone. The runners feet are not required to circle the cones. Knocking the cones over can result in 3-second penalty, 10"
               },
               {
                 "id": 5,
@@ -171,47 +171,131 @@
           },
           {
             "id": 3,
-            "name": "Homerun Derby",
+            "name": "Spikeball",
             "Rules": [
               {
                 "id": 0,
-                "subrule": "All decisions made by the judges are FINAL.  If there is a dispute with a decision, follow the protest procedures outlined previously in this document."
+                "subrule": "All decisions made by the judges are FINAL. If there is a dispute with a decision, follow the protest procedures outlined in this document."
               },
               {
                 "id": 1,
-                "subrule": "Each house may report to the course at their discretion during Opening Games."
+                "subrule": "Each house will have a 2-man team that will be entered into a single elimination tournament bracket. The bracket will be decided by last year’s results."
               },
               {
                 "id": 2,
-                "subrule": "Each house must supply a pitcher and a batter to participate."
+                "subrule": "The losers in the semi-final rounds will compete against each other for third place."
               },
               {
                 "id": 3,
-                "subrule": "The balls and bat will be provided by IFC."
+                "subrule": "Substitutions will only be permitted between matches. Teams will only be allowed one substitution between each match. Substitution will not be permitted during a game play unless an injury occurs."
               },
               {
                 "id": 4,
-                "subrule": "Each player will get 10 outs.  If a player swings and the ball does not qualify as a homerun, it will be recorded as an out (i.e. foul balls, ground balls, and pop flies, etc. will all qualify as an out)"
+                "subrule": "A coin toss will decide which team serves first."
               },
               {
                 "id": 5,
-                "subrule": "There will be a starting line.  If the batter crosses the starting line during the swing, then that ball will be counted as an out."
+                "subrule": "The teams will play three sets. The winner of two sets will be the winner of the match."
               },
               {
                 "id": 6,
-                "subrule": "The ball must land on or over the homerun line to count as a homerun.  IT CANNOT ROLL."
+                "subrule": "Points will be awarded as follows:"
               },
               {
                 "id": 7,
-                "subrule": "If a tie should occur, there will be a 5-swing swing off.  Each batter will receive five pitches and five pitches only.  The batter with the most home runs after the swing off will receive first place.  This will continue until a winner can be named."
+                "subrule": "a. Points will be awarded by rally scoring"
               },
               {
                 "id": 8,
-                "subrule": "The homerun distance for Fraternities is 225 feet.  The distance for Sororities is 100 feet."
+                "subrule": "b. Teams will play to 15 points."
               },
               {
                 "id": 9,
-                "subrule": "Each participant must complete the full game after they have started.  You cannot come back and complete your game at a later time.  If a team leaves before they reach 10 outs, the score they have at the time of departure will count as their final score."
+                "subrule": "c. Teams must win by 2 points"
+              },
+              {
+                "id": 10,
+                "subrule": "Playing Rules"
+              },
+              {
+                "id": 11,
+                "subrule": "Each team is allowed a maximum of three successive contacts of the ball in order to return the ball to the opponent"
+              },
+              {
+                "id": 12,
+                "subrule": "No player is allowed to strike the ball more than once consecutively. It must either be passed or returned to the other team."
+              },
+              {
+                "id": 13,
+                "subrule": "Players will be awarded a second serve if the server’s first attempt is unplayable due to a rim hit, complete miss of the net, or a pocket. The judge of this event may deem any serve that is vertically out of reach a pocket. The judge will also be in charge of calling a rim hit at any point during play."
+              },
+              {
+                "id": 14,
+                "subrule": "Servers are awarded one step to either side during a serve, while maintaining a pivot foot."
+              },
+              {
+                "id": 15,
+                "subrule": "Once the server strikes the ball, players may go anywhere they choose to play the ball."
+              },
+              {
+                "id": 16,
+                "subrule": "The ball must be contacted cleanly, not caught, lifted or thrown. Players may not hit the ball with two hands (even if it is volleyball style)"
+              },
+              {
+                "id": 17,
+                "subrule": "The receiving team sets their position first. The server stands 180 degrees across the designated receiver--the only player allowed to field the serve."
+              },
+              {
+                "id": 18,
+                "subrule": "All players except the receiver must begin the point at least 6 feet from the net. a. The receiver may stand at any desired distance"
+              },
+              {
+                "id": 19,
+                "subrule": "If the receiving team wins the point, the next designated player serves according to the initial sequence. Otherwise, the server switches places with his/her partner and serves to the other receiving team member."
+              },
+              {
+                "id": 20,
+                "subrule": "Players may use any individual part of their body to hit the ball"
+              },
+              {
+                "id": 21,
+                "subrule": "After the serve, any unusual bounce (i.e. pocket) that does not contact the rim is legal and playable."
+              },
+              {
+                "id": 22,
+                "subrule": "A shot which lands on the net, rolls into the rim and then off the net (i.e. roll-up) is played as a pocket, not a direct rim hit. In this case the point in reserved"
+              },
+              {
+                "id": 23,
+                "subrule": "If teams cannot determine the legality of a hit, replay the point"
+              },
+              {
+                "id": 24,
+                "subrule": "Defending players must make an effort not to impede the offending team's possession or play on the ball."
+              },
+              {
+                "id": 25,
+                "subrule": "If an offender collides with a defender, or a defender's position prevents a markeable offensive play on the ball, the infracted player may call \"hinder\" to force a replay of the point."
+              },
+              {
+                "id": 26,
+                "subrule": "The rally ends and a point is awarded when:"
+              },
+              {
+                "id": 27,
+                "subrule": "a. The ball contacts the ground or otherwise isn't returned onto the net within 3 touches."
+              },
+              {
+                "id": 28,
+                "subrule": "b. The ball is hit directly into the rim at any time, not including on a first serve."
+              },
+              {
+                "id": 29,
+                "subrule": "c. The ball bounces and falls back onto the net or rim."
+              },
+              {
+                "id": 30,
+                "subrule": "d. The ball clearly rolls across the net"
               }
             ]
           },
@@ -269,7 +353,7 @@
             "Rules": [
               {
                 "id": 0,
-                "subrule": "The contestant may choose any famous person, GOD, teacher, etc. as long as it is approved by the Games Chair, Cameron Ziegler, by Tuesday, September 5th. It will be first come, first serve with no repeats for the impersonation."
+                "subrule": "The contestant may choose any famous person, GOD, teacher, etc. as long as it is approved by the Games Chair, Matt Zeuschel, by Tuesday, September 5th. It will be first come, first serve with no repeats for the impersonation."
               },
               {
                 "id": 1,
@@ -677,19 +761,20 @@
           },
           {
             "id": 5,
-            "name": "Pushups",
+            "name": "Situps",
+            
             "Rules": [
               {
                 "id": 0,
-                "subrule": "Contestants will have one minute to complete as many pushups as possible."
+                "subrule": "Participants will have 2 minutes to do as many sit-ups as you can. With a full sit up being defined as."
               },
               {
                 "id": 1,
-                "subrule": "They must touch their chest to the provided block, keep a flat back, and fully extend their elbows for each pushup to count."
+                "subrule": "a. Lying on your back, your knees must be bent at a 45-degree angle\n b. Feet together or up to 12 inches apart\n c. Heel MUST stay in contact with the ground\n d. Fingers MUST be interlocked, behind your head\n e. Raise your upper body forward, to the vertical position (ex: base of your neck is above the base of your spine)\n f. Lower your body to the point where your shoulder blades touch the ground"
               },
               {
                 "id": 2,
-                "subrule": "Any pushups performed with bad form will not be counted. Failure to complete 3 correct pushups in a row will result in stopping the event. This is up to the discretion of the representative working the event."
+                "subrule": "Any sit-up performed with bad form will not be counted. Failure to complete 3 correct sit-ups in a row will result in stopping the event. This is up to the discretion of the representative working the event."
               }
             ]
           },
