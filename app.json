@@ -8,10 +8,10 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app_icon.png",
-    "sdkVersion": "27.0.0",
+    "sdkVersion": "34.0.0",
     "android": {
       "icon": "./app_icon.png",
-      "package": "sam.osborne.gwapp",
+      "package": "sam.osborne.gwapp"
   },
 
   "android": {
