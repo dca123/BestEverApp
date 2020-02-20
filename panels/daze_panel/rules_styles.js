@@ -5,7 +5,7 @@ export default StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     paddingBottom: 15,
-    backgroundColor: '#777171'
+    backgroundColor: '#395e66'
   },
   events: {
     marginTop: 15,
@@ -14,7 +14,7 @@ export default StyleSheet.create({
     paddingBottom: 20,
     paddingRight: 20,
     paddingLeft: 10,
-    backgroundColor: '#483F40',
+    backgroundColor: '#32936f',
 
     flex: 1,
     flexDirection: 'row',
@@ -29,7 +29,7 @@ export default StyleSheet.create({
     paddingLeft: 10,
     borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
-    backgroundColor: '#483F40',
+    backgroundColor: '#395e66',
 
     flex: 1,
     flexDirection: 'row',
@@ -43,9 +43,9 @@ export default StyleSheet.create({
   subEvent: {
     width: '100%',
     padding: 10,
-    marginTop: 5,
+    marginTop: 10,
     borderRadius: 4,
-    backgroundColor: '#777171'
+    backgroundColor: '#32936f'
   },
   subIcon: {
     width: 15,

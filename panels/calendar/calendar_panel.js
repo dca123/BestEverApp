@@ -12,14 +12,16 @@ import EventCard from './event_card'
 
 // Days of greekweek
 const days =
-[ {key: '9/7', short: 'Sat', full: 'Saturday '},
-  {key: '9/8', short: 'Sun', full: 'Sunday '},
-  {key: '9/9', short: 'Mon', full: 'Monday '},
-  {key: '9/10', short: 'Tue', full: 'Tuesday '},
-  {key: '9/11', short: 'Wed', full: 'Wendesday '},
-  {key: '9/12', short: 'Thu', full: 'Thursday '},
-  {key: '9/13', short: 'Fri', full: 'Friday '},
-  {key: '9/24', short: 'Sat', full: 'Saturday '} ]
+[ {key: '3/2', short: 'Mon', full: 'Monday '},
+  {key: '3/3', short: 'Tue', full: 'Tuesday '},
+  {key: '3/4', short: 'Wed', full: 'Wendesday '},
+  {key: '3/5', short: 'Thu', full: 'Thursday '},
+  {key: '3/9', short: 'Mon', full: 'Monday '},
+  {key: '3/10', short: 'Tue', full: 'Tuesday '},
+  {key: '3/11', short: 'Wed', full: 'Wendesday '},
+  {key: '3/12', short: 'Thu', full: 'Thursday '},
+  {key: '3/13', short: 'Fri', full: 'Friday '},
+  {key: '3/14', short: 'Sat', full: 'Saturday '} ]
 
 export default class Calendar extends React.Component {
   constructor (props) {
@@ -39,7 +41,7 @@ export default class Calendar extends React.Component {
   componentDidMount () {
     recordPageView('Scoreboard-Init')
     axios
-      .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/Calendar!A2:F?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
+      .get(`https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/Calendar!A2:F?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`)
       .then((response) => {
         this.setState({
           events: response.data.values
@@ -99,7 +101,25 @@ export default class Calendar extends React.Component {
         <FlatList
           style = {styles.dayListContainer}
           contentContainerStyle = {styles.dayList}
-          data={ days }
+          data={ days.slice(0,3) }
+          scrollEnabled={false}
+          horizontal
+          renderItem={({item}) =>
+            <TouchableOpacity
+              title = {item.short}
+              onPress={ () => { this.dayPress(item) }}
+              style = {styles.dayButton}>
+              <Text style = {{
+                color: '#fff',
+                alignSelf: 'center'
+              }}>{item.short}</Text>
+            </TouchableOpacity>
+          }>
+        </FlatList>
+        <FlatList
+          style = {styles.dayListContainer}
+          contentContainerStyle = {styles.dayList}
+          data={ days.slice(4,10) }
           scrollEnabled={false}
           horizontal
           renderItem={({item}) =>
@@ -133,7 +153,7 @@ export default class Calendar extends React.Component {
           </View>
           <ScrollView
             contentContainerStyle = {[{
-              backgroundColor: '#777171',
+              backgroundColor: '#395e66',
               flexDirection: 'column'
             }]}>
             {this.state.todays_events && this.renderEvents()}

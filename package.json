@@ -27,9 +27,10 @@
   },
   "dependencies": {
     "accordion-collapse-react-native": "^0.1.6",
+    "babel-preset-expo": "^5.0.0",
     "expo": "^34.0.1",
     "install": "^0.12.1",
-    "npm": "^6.4.0",
+    "npm": "^6.13.7",
     "react": "16.8.3",
     "react-ga": "^2.5.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
@@ -38,6 +39,6 @@
     "react-native-unique-id": "^1.0.4",
     "react-native-web": "^0.8.9",
     "react-navigation": "^2.12.1",
-    "babel-preset-expo": "^5.0.0"
+    "watchman": "^1.0.0"
   }
 }

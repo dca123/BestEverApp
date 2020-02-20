@@ -30,7 +30,7 @@ export default class Sororities extends React.Component {
     recordPageView("Scoreboard-Init");
     axios
       .get(
-        `https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/Sororities!G2:K?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`
+        `https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/Non%20Greek!G2:K?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`
       )
       .then(response => {
         this.setState({ houses: response.data.values });
@@ -42,7 +42,7 @@ export default class Sororities extends React.Component {
     recordPageView("Scoreboard-Refresh");
     axios
       .get(
-        `https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/Sororities!G2:K?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`
+        `https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/Non%20Greek!G2:K?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`
       )
       .then(response => {
         this.setState({ houses: response.data.values });

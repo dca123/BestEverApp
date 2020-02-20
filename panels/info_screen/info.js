@@ -6,7 +6,7 @@ export default class InfoScreen extends React.Component {
     return (
       <View
         style={{
-          backgroundColor: "#474040",
+          backgroundColor: "#395e66",
           flexGrow: 1,
           justifyContent: "flex-start"
         }}
@@ -19,26 +19,33 @@ export default class InfoScreen extends React.Component {
         <Text
           style={{ color: "#fff", marginHorizontal: 15, marginVertical: 8 }}
         >
-          Shane Bodimer:{"\n"}
+          <Text style={{fontWeight: 'bold'}}>
+            Shane Bodimer{"\n"}
+          </Text>
           Computer Science{"\n"}
           Delta Sigma Phi{"\n"}
-          KMNR
+          KMNR - MC Flow
         </Text>
         <Text
           style={{ color: "#fff", marginHorizontal: 15, marginVertical: 8 }}
         >
-          Sam Osborne:{"\n"}
-          Super Senior in Computer Engineering and Computer Science{"\n"}
+          <Text style={{fontWeight: 'bold'}}>
+            Maneesh Gona{"\n"}
+          </Text>
+          Delta Sigma Phi{"\n"}
+          KMNR - MC Mardi Gras{"\n"}
+          EcoMiners{"\n"}
+          20's BB
+        </Text>
+        <Text
+          style={{ color: "#fff", marginHorizontal: 15, marginVertical: 8 }}
+        >
+          <Text style={{fontWeight: 'bold'}}>
+            Sam Osborbe{"\n"}
+          </Text>
+          Senior in Computer Engineering and Computer Science{"\n"}
           Delta Sigma Phi{"\n"}
           IFC VP Riskman
-        </Text>
-        <Text
-          style={{ color: "#fff", marginHorizontal: 15, marginVertical: 8 }}
-        >
-          Maneesh Gona:{"\n"}
-          Super Senior in Computer Engineering and Computer Science{"\n"}
-          Delta Sigma Phi{"\n"}
-          KMNR - MC Mardi Gras
         </Text>
         <Text
           style={{
@@ -48,7 +55,7 @@ export default class InfoScreen extends React.Component {
             fontSize: 10
           }}
         >
-          The Greek Week App is not a substitute for the Games Packet. {"\n"}
+          The Best Ever App is not a substitute for the Participation Packet. {"\n"}
           Information is not guranteed to be completely up to date or reliable.{" "}
           {"\n"}
           Please refer to the games packet for definitive rules and schedules{" "}

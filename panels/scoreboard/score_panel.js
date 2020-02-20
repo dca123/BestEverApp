@@ -29,7 +29,7 @@ export default class App extends React.Component {
   componentDidMount () {
     recordPageView('Scoreboard-Init')
     axios
-      .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/G2:K?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
+      .get(`https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/G2:K?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`)
       .then((response) => {
         this.setState({ houses: response.data.values })
       })
@@ -39,7 +39,7 @@ export default class App extends React.Component {
   refresh () {
     recordPageView('Scoreboard-Refresh')
     axios
-      .get(`https://sheets.googleapis.com/v4/spreadsheets/1ussRz_MYmSR-Hhj98cez87DOOl5Txl5z1hK1mhT9sVM/values/G2:J?key=AIzaSyA1lvmJgQeRYaoCPkjOZt7kI1kv2dyRch8`)
+      .get(`https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/G2:K?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`)
       .then((response) => {
         this.setState({ houses: response.data.values })
       })

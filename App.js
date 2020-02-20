@@ -14,7 +14,7 @@ import { createStackNavigator } from "react-navigation";
 import Calendar from "./panels/calendar/calendar_panel";
 import Rules from "./panels/rules_panel/rules_panel";
 import Score from "./panels/scoreboard/score_panel";
-import Sororities from "./panels/scoreboard/sororities_panel";
+import NonGreek from "./panels/scoreboard/nongreek_panel";
 import InfoScreen from "./panels/info_screen/info";
 
 // Styles
@@ -28,8 +28,8 @@ class HomeScreen extends React.Component {
     this.state = {
       index: 0,
       routes: [
-        { key: "score", title: "Fraternities" },
-        { key: "sororities", title: "Sororities" },
+        { key: "score", title: "All Scores" },
+        { key: "nongreek", title: "Non Greek" },
         { key: "calendar", title: "Calendar" },
         { key: "rules", title: "Rule Book" }
       ]
@@ -69,9 +69,9 @@ class HomeScreen extends React.Component {
             paddingLeft: 20,
             paddingRight: 20,
             paddingBottom: 0,
-            backgroundColor: "#474040",
+            backgroundColor: "#4cbb17",
             borderBottomWidth: 1,
-            borderBottomColor: "#3d3737",
+            borderBottomColor: "#32936F",
             flexDirection: "row",
             justifyContent: "space-between"
           }}
@@ -83,11 +83,11 @@ class HomeScreen extends React.Component {
             }}
           >
             {" "}
-            Greek Week 2019
+            Best Ever St Pat's
           </Text>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate("Info")}
-            // style={{ paddingRight: 10, paddingTop: 5 }}
+            // style={{ backgroundColor: 'red' }}
           >
             <View
               style={{
@@ -101,7 +101,7 @@ class HomeScreen extends React.Component {
               }}
             >
               <Text
-                style={{ color: "#474040", fontSize: 17, fontStyle: "italic" }}
+                style={{ color: "#395e66", fontSize: 17, fontStyle: "italic" }}
               >
                 {" "}
                 i{" "}
@@ -117,7 +117,7 @@ class HomeScreen extends React.Component {
           renderTabBar={this._renderTabBar}
           renderScene={SceneMap({
             score: Score,
-            sororities: Sororities,
+            nongreek: NonGreek,
             calendar: Calendar,
             rules: Rules
           })}

@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "Greek Week App",
-    "description": "Everything you need to be prepared for Greek Week 2018",
+    "name": "Best Ever St Pat's 2020",
+    "description": "Everything you need for the best ever St Pat's !",
     "slug": "gwapp",
-    "primaryColor": "#474040",
+    "primaryColor": "#4cbb17",
     "privacy": "public",
     "version": "1.0.0",
     "orientation": "portrait",

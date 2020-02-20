@@ -4,7 +4,7 @@ export default StyleSheet.create({
   container: {
     // paddingTop: 10,
     overflow: 'scroll',
-    backgroundColor: '#777171'
+    backgroundColor: '#395e66'
   },
   rank: {
     fontSize: 20,
@@ -16,7 +16,7 @@ export default StyleSheet.create({
     color: '#FFEB3C'
   },
   card: {
-    backgroundColor: '#483F40',
+    backgroundColor: '#32936f',
 
     marginTop: 15,
     marginLeft: 15,

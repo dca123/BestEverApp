@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: '#777171',
+    backgroundColor: '#395e66',
     justifyContent: 'flex-start',
     flexDirection: 'column',
     flex: 30,
@@ -35,7 +35,7 @@ export default StyleSheet.create({
   },
 
   eventCard: {
-    backgroundColor: '#483F40',
+    backgroundColor: '#32936f',
 
     marginLeft: 10,
     marginRight: 10,
