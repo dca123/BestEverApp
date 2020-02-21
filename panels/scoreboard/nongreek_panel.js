@@ -71,7 +71,7 @@ export default class Sororities extends React.Component {
                 key={i}
                 rank={i + 1}
                 house={house[0]}
-                score={house[1]}
+                // score={house[1]}
                 color={house[2]}
                 abbr={house[3]}
                 secondary={house[4]}

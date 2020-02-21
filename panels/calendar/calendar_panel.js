@@ -141,7 +141,7 @@ export default class Calendar extends React.Component {
         >
           <View
             style = {{
-              borderBottomColor: '#483F40',
+              borderBottomColor: '#568259',
               borderBottomWidth: 1,
               marginBottom: 10
             }}>
@@ -153,7 +153,7 @@ export default class Calendar extends React.Component {
           </View>
           <ScrollView
             contentContainerStyle = {[{
-              backgroundColor: '#395e66',
+              backgroundColor: '#ebf2fa',
               flexDirection: 'column'
             }]}>
             {this.state.todays_events && this.renderEvents()}

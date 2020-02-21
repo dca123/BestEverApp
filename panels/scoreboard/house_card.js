@@ -16,8 +16,8 @@ export default class HouseCard extends React.Component {
 
     // If top 3 ranked, apply gold glow
     if (this.props.rank <= 3) {
-      glow = '#FFEB3C'
-      radius = 2
+      glow = '#96e6b3'
+      radius = 5
     }
 
     // Alter opacity to highlight top 3
@@ -43,17 +43,7 @@ export default class HouseCard extends React.Component {
 
         {/* Crest */ }
         <View><HouseCrest abbr={this.props.abbr} /></View>
-
         {/* Rank */ }
-        <View style={{ maxWidth: 45, flex: 1, flexDirection: 'row', justifyContent: 'center', marginRight: 5 }}>
-          {/* Value */ }
-          <Text style={styles.rank}>{this.props.rank}</Text>
-
-          {/* Modify top three */ }
-          <Text style={styles.rank_append}>{this.props.rank === 1 && 'st'}</Text>
-          <Text style={styles.rank_append}>{this.props.rank === 2 && 'nd'}</Text>
-          <Text style={styles.rank_append}>{this.props.rank === 3 && 'rd'}</Text>
-        </View>
 
         {/* House */ }
         <View>
@@ -62,14 +52,26 @@ export default class HouseCard extends React.Component {
           </Text>
         </View>
 
+
         {/* Score */ }
         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
-          <Text style={[styles.f24, styles.bold, textColor]}>
-            {this.props.score}
-          </Text>
-          <Text style={textColor}>
-            pts
-          </Text>
+          {/* Value */ }
+          <Text style={styles.rank}>{this.props.rank}</Text>
+
+          {/* Modify top three */ }
+
+          <Text style={styles.rank_append}>{this.props.rank === 1 && 'st'}</Text>
+          <Text style={styles.rank_append}>{this.props.rank === 2 && 'nd'}</Text>
+          <Text style={styles.rank_append}>{this.props.rank === 3 && 'rd'}</Text>
+
+
+          {/* <Text style={[styles.f24, styles.bold, textColor]}>
+          //   {this.props.score}
+          // </Text>
+          // <Text style={textColor}>
+          //   pts
+           </Text>*/}
+
         </View>
 
       </View>

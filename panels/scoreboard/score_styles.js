@@ -4,25 +4,25 @@ export default StyleSheet.create({
   container: {
     // paddingTop: 10,
     overflow: 'scroll',
-    backgroundColor: '#395e66'
+    backgroundColor: '#EBF2FA'
   },
   rank: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#FFEB3C'
+    color: '#EBF2FA'
   },
   rank_append: {
     fontSize: 20,
-    color: '#FFEB3C'
+    color: '#EBF2FA'
   },
   card: {
-    backgroundColor: '#32936f',
+    backgroundColor: '#379634',
 
     marginTop: 15,
     marginLeft: 15,
     marginRight: 10,
     marginBottom: 0,
-    borderRadius: 4,
+    borderRadius: 2,
     paddingTop: 10,
     paddingBottom: 10,
     paddingRight: 10,

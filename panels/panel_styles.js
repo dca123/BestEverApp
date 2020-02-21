@@ -12,7 +12,7 @@ export default StyleSheet.create({
   },
   header: {
     height: 50,
-    backgroundColor: '#395e66',
+    backgroundColor: '#379634',
     paddingTop: 5,
     paddingBottom: 5
   }

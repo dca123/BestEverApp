@@ -25,7 +25,8 @@ const crests = {
   TXI: require("../../images/crests/txi.png"),
   ZTA: require("../../images/crests/zta.png"),
   XO: require("../../images/crests/xo.png"),
-  KD: require("../../images/crests/kd.png")
+  KD: require("../../images/crests/kd.png"),
+  TRI: require("../../images/crests/tri.png")
 };
 
 export default class HouseColors extends React.Component {

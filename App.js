@@ -12,7 +12,7 @@ import { createStackNavigator } from "react-navigation";
 
 // Components
 import Calendar from "./panels/calendar/calendar_panel";
-import Rules from "./panels/rules_panel/rules_panel";
+import Daze from "./panels/daze_panel/daze_panel";
 import Score from "./panels/scoreboard/score_panel";
 import NonGreek from "./panels/scoreboard/nongreek_panel";
 import InfoScreen from "./panels/info_screen/info";
@@ -28,10 +28,10 @@ class HomeScreen extends React.Component {
     this.state = {
       index: 0,
       routes: [
+        { key: "daze", title: "DAZE" },
         { key: "score", title: "All Scores" },
         { key: "nongreek", title: "Non Greek" },
-        { key: "calendar", title: "Calendar" },
-        { key: "rules", title: "Rule Book" }
+        { key: "calendar", title: "Calendar" }
       ]
     };
 
@@ -51,6 +51,7 @@ class HomeScreen extends React.Component {
           </Text>
         )}
         style={styles.header}
+        indicatorStyle={{ backgroundColor: '#96e6b3', height: 2 }}
       />
     );
   }
@@ -119,7 +120,7 @@ class HomeScreen extends React.Component {
             score: Score,
             nongreek: NonGreek,
             calendar: Calendar,
-            rules: Rules
+            daze: Daze
           })}
           onIndexChange={index => this.setState({ index })}
           initialLayout={{

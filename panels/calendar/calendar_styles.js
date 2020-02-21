@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: '#395e66',
+    backgroundColor: '#EBF2FA',
     justifyContent: 'flex-start',
     flexDirection: 'column',
     flex: 30,
@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   dayListContainer: {
     paddingBottom: 5,
-    paddingTop: 5,
+    paddingTop: 15,
     flex: 1
   },
   dayList: {
@@ -20,7 +20,7 @@ export default StyleSheet.create({
     flexGrow: 1
   },
   dayButton: {
-    backgroundColor: '#232323',
+    backgroundColor: '#568259',
     borderRadius: 50,
     height: 40,
     width: 40,
@@ -29,13 +29,14 @@ export default StyleSheet.create({
   },
   currentDateDisplay: {
     fontSize: 20,
-    color: '#fff',
+    color: '#568259',
     marginBottom: 5,
-    paddingLeft: 10
+    paddingLeft: 10,
+    marginTop: 10
   },
 
   eventCard: {
-    backgroundColor: '#32936f',
+    backgroundColor: '#379634',
 
     marginLeft: 10,
     marginRight: 10,

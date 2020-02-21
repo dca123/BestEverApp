@@ -55,7 +55,7 @@ export default class App extends React.Component {
             colors={['#fff']}
             tintColor="#fff"
             refreshing={this.state.refreshing}
-            onRefresh={this.refresh}
+            onRefresh={this.refresh}score
           />
         }>
 
