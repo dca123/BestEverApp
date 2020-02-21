@@ -27,7 +27,6 @@ export default class App extends React.Component {
 
   // When page loads
   componentDidMount () {
-    recordPageView('Scoreboard-Init')
     axios
       .get(`https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/G2:K?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`)
       .then((response) => {

@@ -3,7 +3,6 @@ import axios from "axios";
 import { Text, ScrollView, RefreshControl } from "react-native";
 
 // Utilities
-import { recordPageView } from "../../utilities/analytics";
 
 // Components
 import HouseCard from "./house_card";
@@ -27,7 +26,6 @@ export default class Sororities extends React.Component {
 
   // When page loads
   componentDidMount() {
-    recordPageView("Scoreboard-Init");
     axios
       .get(
         `https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/Non%20Greek!G2:K?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`
@@ -39,7 +37,6 @@ export default class Sororities extends React.Component {
 
   // When user pulls to refresh
   refresh() {
-    recordPageView("Scoreboard-Refresh");
     axios
       .get(
         `https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/Non%20Greek!G2:K?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`

@@ -6,18 +6,31 @@ export default class InfoScreen extends React.Component {
     return (
       <View
         style={{
-          backgroundColor: "#395e66",
+          backgroundColor: "#EBF2FA",
           flexGrow: 1,
           justifyContent: "flex-start"
         }}
       >
-        <Text style={{ color: "#fff", margin: 15 }}>About the Developers:</Text>
-        <Text style={{ color: "#fff", marginHorizontal: 15, marginBottom: 10 }}>
+        <Text style={{ color: "#379634", margin: 15 }}>About the Developers:</Text>
+        <Text style={{ color: "#379634", marginHorizontal: 15, marginBottom: 10 }}>
+          This app was re-skinned by
+        </Text>
+        <Text
+          style={{ color: "#379634", marginHorizontal: 15, marginVertical: 8 }}
+        >
+          <Text style={{fontWeight: 'bold'}}>
+            Devinda Senanayaka{"\n"}
+          </Text>
+          Computer Science{"\n"}
+          Delta Tau Delta{"\n"}
+          KMNR - DJ Mushroom
+        </Text>
+        <Text style={{ color: "#379634", marginHorizontal: 15, marginBottom: 10 }}>
           This app was developed by three members of Delta Sigma Phi: Delta
           Epsilon at Missouri S&T
         </Text>
         <Text
-          style={{ color: "#fff", marginHorizontal: 15, marginVertical: 8 }}
+          style={{ color: "#379634", marginHorizontal: 15, marginVertical: 8 }}
         >
           <Text style={{fontWeight: 'bold'}}>
             Shane Bodimer{"\n"}
@@ -27,7 +40,7 @@ export default class InfoScreen extends React.Component {
           KMNR - MC Flow
         </Text>
         <Text
-          style={{ color: "#fff", marginHorizontal: 15, marginVertical: 8 }}
+          style={{ color: "#379634", marginHorizontal: 15, marginVertical: 8 }}
         >
           <Text style={{fontWeight: 'bold'}}>
             Maneesh Gona{"\n"}
@@ -38,20 +51,20 @@ export default class InfoScreen extends React.Component {
           20's BB
         </Text>
         <Text
-          style={{ color: "#fff", marginHorizontal: 15, marginVertical: 8 }}
+          style={{ color: "#379634", marginHorizontal: 15, marginVertical: 8 }}
         >
           <Text style={{fontWeight: 'bold'}}>
             Sam Osborbe{"\n"}
           </Text>
           Senior in Computer Engineering and Computer Science{"\n"}
           Delta Sigma Phi{"\n"}
-          IFC VP Riskman
         </Text>
         <Text
           style={{
-            color: "#fff",
+            color: "#379634",
             marginTop: 30,
             marginBottom: 30,
+            marginLeft: 15,
             fontSize: 10
           }}
         >

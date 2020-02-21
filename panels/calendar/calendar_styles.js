@@ -11,17 +11,24 @@ export default StyleSheet.create({
   dayListContainer: {
     paddingBottom: 5,
     paddingTop: 15,
-    flex: 1
+    width: 20,
+    height: 60
+  },
+  weekText:{
+    paddingTop: 25,
+    paddingLeft: 10,
+    width: 60
   },
   dayList: {
-    justifyContent: 'space-evenly',
+    justifyContent: 'flex-start',
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     flexGrow: 1
   },
   dayButton: {
     backgroundColor: '#568259',
     borderRadius: 50,
+    marginLeft: 10,
     height: 40,
     width: 40,
     alignContent: 'center',
@@ -32,7 +39,7 @@ export default StyleSheet.create({
     color: '#568259',
     marginBottom: 5,
     paddingLeft: 10,
-    marginTop: 10
+    marginTop: 20
   },
 
   eventCard: {
@@ -40,7 +47,7 @@ export default StyleSheet.create({
 
     marginLeft: 10,
     marginRight: 10,
-    marginBottom: 20,
+    marginBottom: 10,
     borderRadius: 4,
     paddingTop: 10,
     paddingBottom: 10,

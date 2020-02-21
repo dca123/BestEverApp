@@ -5,7 +5,6 @@ import styles from './calendar_styles'
 import axios from 'axios'
 
 // Utilities
-import { recordPageView } from '../../utilities/analytics'
 
 // Components
 import EventCard from './event_card'
@@ -39,7 +38,6 @@ export default class Calendar extends React.Component {
   }
 
   componentDidMount () {
-    recordPageView('Scoreboard-Init')
     axios
       .get(`https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/Calendar!A2:F?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`)
       .then((response) => {
@@ -98,42 +96,52 @@ export default class Calendar extends React.Component {
     let dayDisplay = this.state.selected_day ? this.state.selected_day.full + this.state.selected_day.key : null
     return (
       <View style = {styles.container}>
-        <FlatList
-          style = {styles.dayListContainer}
-          contentContainerStyle = {styles.dayList}
-          data={ days.slice(0,3) }
-          scrollEnabled={false}
-          horizontal
-          renderItem={({item}) =>
-            <TouchableOpacity
-              title = {item.short}
-              onPress={ () => { this.dayPress(item) }}
-              style = {styles.dayButton}>
-              <Text style = {{
-                color: '#fff',
-                alignSelf: 'center'
-              }}>{item.short}</Text>
-            </TouchableOpacity>
-          }>
-        </FlatList>
-        <FlatList
-          style = {styles.dayListContainer}
-          contentContainerStyle = {styles.dayList}
-          data={ days.slice(4,10) }
-          scrollEnabled={false}
-          horizontal
-          renderItem={({item}) =>
-            <TouchableOpacity
-              title = {item.short}
-              onPress={ () => { this.dayPress(item) }}
-              style = {styles.dayButton}>
-              <Text style = {{
-                color: '#fff',
-                alignSelf: 'center'
-              }}>{item.short}</Text>
-            </TouchableOpacity>
-          }>
-        </FlatList>
+       <View style={{flex: 1, flexDirection: 'row', alignItems: 'stretch'}}>
+          <Text style = {styles.weekText}>
+            Week 1
+          </Text>
+          <FlatList
+            style = {styles.dayListContainer}
+            contentContainerStyle = {styles.dayList}
+            data={ days.slice(0,3) }
+            scrollEnabled={false}
+            horizontal
+            renderItem={({item}) =>
+              <TouchableOpacity
+                title = {item.short}
+                onPress={ () => { this.dayPress(item) }}
+                style = {styles.dayButton}>
+                <Text style = {{
+                  color: '#fff',
+                  alignSelf: 'center'
+                }}>{item.short}</Text>
+              </TouchableOpacity>
+            }>
+          </FlatList>
+        </View>
+        <View style={{flex: 1, flexDirection: 'row', alignItems: 'stretch'}}>
+          <Text style = {styles.weekText}>
+            Week 2
+          </Text>
+          <FlatList
+            style = {styles.dayListContainer}
+            contentContainerStyle = {styles.dayList}
+            data={ days.slice(4,10) }
+            scrollEnabled={false}
+            horizontal
+            renderItem={({item}) =>
+              <TouchableOpacity
+                title = {item.short}
+                onPress={ () => { this.dayPress(item) }}
+                style = {styles.dayButton}>
+                <Text style = {{
+                  color: '#fff',
+                  alignSelf: 'center'
+                }}>{item.short}</Text>
+              </TouchableOpacity>
+            }>
+          </FlatList>
+        </View>
         <View
           style = {{
             flex: 10

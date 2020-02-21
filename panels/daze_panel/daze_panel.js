@@ -2,15 +2,6 @@ import React from 'react'
 import axios from 'axios'
 import { View, Text, Image, ScrollView, RefreshControl, TouchableCapacity } from 'react-native'
 import { Collapse, CollapseHeader, CollapseBody } from 'accordion-collapse-react-native'
-// Utilities
-import { recordPageView } from '../../utilities/analytics'
-
-// Components
-import SubRule from './sub_rule'
-
-// Data
-import rules from './rules.json'
-
 // Styles
 import styles from './rules_styles'
 
@@ -34,7 +25,6 @@ export default class Rules extends React.Component {
 
   componentDidMount() {
     var that = this;
-    recordPageView('Rules-Init');
     //We are showing the coundown timer for a given expiry date-time
     //If you are making an quize type app then you need to make a simple timer
     //which can be done by using the simple like given below
@@ -44,8 +34,12 @@ export default class Rules extends React.Component {
       .utcOffset('-06:00')
       .format('YYYY-MM-DD hh:mm:ss');
     //Getting the current date-time with required formate and UTC
-
-    var expirydate = '2020-03-12 00:00:00';//You can set your own date-time
+    var expirydate;
+    if (moment().isAfter('2020-03-14T00:00:00')) {
+      expirydate = '2021-03-11 00:00:00';//You can set your own date-time
+    } else {
+      expirydate = '2020-03-12 00:00:00';//You can set your own date-time
+    }
     //Let suppose we have to show the countdown for above date-time
 
     var diffr = moment.duration(moment(expirydate).diff(moment(date)));
@@ -63,6 +57,7 @@ export default class Rules extends React.Component {
   }
 
   render() {
+
     return (
       <View style={styles.container}>
         <CountDown
@@ -74,11 +69,10 @@ export default class Rules extends React.Component {
           digitTxtStyle={{color: '#4cbb17'}}
           digitStyle={{backgroundColor: '#FFF'}}
           timeLabelStyle={{color: '#4cbb17', fontWeight: 'bold'}}
-
-
-
         />
       </View>
     );
+
+
   }
 }

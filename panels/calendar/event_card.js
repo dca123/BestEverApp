@@ -56,7 +56,7 @@ export default class EventCard extends React.Component {
               justifyContent = 'flex-start'>
               <TouchableWithoutFeedback>
                 <TouchableOpacity onPress = {() => Linking.openURL(this.props.locationLink)}>
-                  <Text style={{color: '#ffffff'}}>Location: <Text style = {{color: 'lightblue'}}>{this.props.location}{'\n'}</Text></Text>
+                  <Text style={{color: '#ffffff'}}>Location: <Text style = {{color: 'lightblue'}}>{this.props.location}</Text></Text>
                 </TouchableOpacity>
               </TouchableWithoutFeedback>
               <Text style={{color: '#ffffff'}}>{this.props.details}</Text>

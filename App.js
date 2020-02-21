@@ -5,7 +5,8 @@ import {
   Dimensions,
   TouchableOpacity,
   Platform,
-  StatusBar
+  StatusBar,
+  Image
 } from "react-native";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
 import { createStackNavigator } from "react-navigation";
@@ -19,6 +20,9 @@ import InfoScreen from "./panels/info_screen/info";
 
 // Styles
 import styles from "./panels/panel_styles";
+
+import shamrock from './images/shamrock.png'
+
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -72,7 +76,7 @@ class HomeScreen extends React.Component {
             paddingBottom: 0,
             backgroundColor: "#4cbb17",
             borderBottomWidth: 1,
-            borderBottomColor: "#32936F",
+            borderBottomColor: "#4cbb17",
             flexDirection: "row",
             justifyContent: "space-between"
           }}
@@ -83,6 +87,7 @@ class HomeScreen extends React.Component {
               color: "#fff"
             }}
           >
+          <Image style={{height: 25, width:25}} source={shamrock} />
             {" "}
             Best Ever St Pat's
           </Text>

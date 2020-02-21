@@ -26,7 +26,16 @@ const crests = {
   ZTA: require("../../images/crests/zta.png"),
   XO: require("../../images/crests/xo.png"),
   KD: require("../../images/crests/kd.png"),
-  TRI: require("../../images/crests/tri.png")
+  TRI: require("../../images/crests/tri.png"),
+  FN: require("../../images/crests/fn.png"),
+  HVZ: require("../../images/crests/hvz.png"),
+  EWB: require("../../images/crests/ewb.png"),
+  DOL: require("../../images/crests/dol.png"),
+  KMNR: require("../../images/crests/kmnr.png"),
+  PSR: require("../../images/crests/psr.png"),
+  APO: require("../../images/crests/apo.png"),
+  GDI: require("../../images/crests/gdi.png"),
+  PSP: require("../../images/crests/psp.png")
 };
 
 export default class HouseColors extends React.Component {
