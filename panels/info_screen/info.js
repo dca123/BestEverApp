@@ -12,23 +12,13 @@ export default class InfoScreen extends React.Component {
         }}
       >
         <Text style={{ color: "#379634", margin: 15 }}>About the Developers:</Text>
-        <Text style={{ color: "#379634", marginHorizontal: 15, marginBottom: 10 }}>
-          This app was re-skinned by
+        <Text style={{fontWeight: 'bold'}}>
+          Devinda Senanayaka{"\n"}
         </Text>
-        <Text
-          style={{ color: "#379634", marginHorizontal: 15, marginVertical: 8 }}
-        >
-          <Text style={{fontWeight: 'bold'}}>
-            Devinda Senanayaka{"\n"}
-          </Text>
-          Computer Science{"\n"}
-          Delta Tau Delta{"\n"}
-          KMNR - DJ Mushroom
-        </Text>
-        <Text style={{ color: "#379634", marginHorizontal: 15, marginBottom: 10 }}>
-          This app was developed by three members of Delta Sigma Phi: Delta
-          Epsilon at Missouri S&T
-        </Text>
+        Computer Science{"\n"}
+        Delta Tau Delta{"\n"}
+        KMNR - DJ Mushroom
+      </Text>
         <Text
           style={{ color: "#379634", marginHorizontal: 15, marginVertical: 8 }}
         >

@@ -1,23 +1,21 @@
 {
   "expo": {
-    "name": "Best Ever St Pat's 2020",
-    "description": "Everything you need for the best ever St Pat's !",
-    "slug": "gwapp",
-    "primaryColor": "#4cbb17",
-    "privacy": "public",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./app_icon.png",
-    "sdkVersion": "34.0.0",
-    "android": {
-      "icon": "./app_icon.png",
-      "package": "sam.osborne.gwapp"
-  },
-
-  "android": {
-    "package": "com.samosborne.gwapp",
-    "permissions": [],
-    "versionCode": 1
+      "name": "Best Ever",
+      "description": "Everything you need for the best ever St Pat's !",
+      "icon": "./logo.png",
+      "primaryColor": "#4cbb17",
+      "privacy": "public",
+      "version": "1.0.0",
+      "orientation": "portrait",
+      "slug": "be-app",
+      "sdkVersion": "34.0.0",
+      "ios": {
+      "bundleIdentifier": "com.patsboard.bestever"
+        },
+      "android": {
+        "package": "com.patsboard.bestever",
+        "permissions": [],
+        "versionCode": 1
+      }
   }
-}
 }
