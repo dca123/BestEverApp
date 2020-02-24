@@ -11,10 +11,10 @@ export default class InfoScreen extends React.Component {
           justifyContent: "flex-start"
         }}
       >
+      <Text style={{ color: "#379634", margin: 15, marginBottom: 0 }}>About the Developers:{"\n"}</Text>
       <Text
         style={{ color: "#379634", marginHorizontal: 15, marginVertical: 8 }}
       >
-        <Text style={{ color: "#379634", margin: 15 }}>About the Developers:</Text>
         <Text style={{fontWeight: 'bold'}}>
           Devinda Senanayaka{"\n"}
         </Text>

@@ -103,7 +103,7 @@ export default class Calendar extends React.Component {
           <FlatList
             style = {styles.dayListContainer}
             contentContainerStyle = {styles.dayList}
-            data={ days.slice(0,3) }
+            data={ days.slice(0,4) }
             scrollEnabled={false}
             horizontal
             renderItem={({item}) =>
