@@ -14,6 +14,7 @@ import { createStackNavigator } from "react-navigation";
 // Components
 import Calendar from "./panels/calendar/calendar_panel";
 import Daze from "./panels/daze_panel/daze_panel";
+import Sales from "./panels/sales/sales_panel";
 import Leaderboard from "./panels/scoreboard/score_panel";
 import InfoScreen from "./panels/info_screen/info";
 
@@ -33,7 +34,8 @@ class HomeScreen extends React.Component {
       routes: [
         { key: "daze", title: "DAZE" },
         { key: "leaderboard", title: "Leaderboard" },
-        { key: "calendar", title: "Calendar" }
+        { key: "calendar", title: "Calendar" },
+        { key: "sales", title: "Merch" }
       ]
     };
 
@@ -122,7 +124,8 @@ class HomeScreen extends React.Component {
           renderScene={SceneMap({
             leaderboard: Leaderboard,
             calendar: Calendar,
-            daze: Daze
+            daze: Daze,
+            sales: Sales
           })}
           onIndexChange={index => this.setState({ index })}
           initialLayout={{

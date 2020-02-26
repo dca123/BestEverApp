@@ -45,11 +45,11 @@ export default class Rules extends React.Component {
     var hours = parseInt(diffr.asHours());
     var minutes = parseInt(diffr.minutes());
     var seconds = parseInt(diffr.seconds());
-
+    var days = parseInt(diffr.days()) + 1;
     var d = hours * 60 * 60 + minutes * 60 + seconds;
     //converting in seconds
 
-    that.setState({ totalDuration: d });
+    that.setState({ totalDuration: d, days: days });
     //Settign up the duration of countdown in seconds to re-render
   }
 
@@ -69,7 +69,7 @@ export default class Rules extends React.Component {
           timeLabels={{d: 'Daze', h: 'Hours', m: 'Minutes', s: 'Seconds'}}
           timeToShow={['D','H','M','S']}
         />
-        <Text style={styles.daze_title}>Read {totalDuration} daze</Text>
+        <Text style={styles.daze_title}>Read {this.state.days} daze</Text>
       </View>
     );
 

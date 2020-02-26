@@ -11,7 +11,7 @@ export default StyleSheet.create({
     color: '#4cbb17',
     fontStyle: 'italic',
     fontWeight: 'bold',
-    marginTop: 40,
+    marginTop: 20,
     textAlign: "center"
     }
 
