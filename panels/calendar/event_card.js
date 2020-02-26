@@ -54,12 +54,17 @@ export default class EventCard extends React.Component {
           {this.state.expanded // expanded details
             ? <View
               justifyContent = 'flex-start'>
-              <TouchableWithoutFeedback>
-                <TouchableOpacity onPress = {() => Linking.openURL(this.props.locationLink)}>
-                  <Text style={{color: '#ffffff'}}>Location: <Text style = {{color: 'lightblue'}}>{this.props.location}</Text></Text>
-                </TouchableOpacity>
-              </TouchableWithoutFeedback>
-              <Text style={{color: '#ffffff'}}>{this.props.details}</Text>
+              <Text style={styles.cardLinkTitle}>{"Location: "}
+                <Text style = {styles.cardLink} onPress = {() => Linking.openURL(this.props.locationLink)}>
+                  {this.props.location} (Launch Maps)
+                </Text>
+              </Text>
+              <Text style={styles.cardLinkTitle}>{"Contact: "}
+                <Text style = {styles.cardLink} onPress = {() => Linking.openURL(this.props.cNumber)}>
+                  {this.props.cName} (Open Dialer)
+                </Text>
+              </Text>
+              <Text style={{color: '#ffffff', marginTop: 10}}>{this.props.details}</Text>
             </View>
             : null }
         </View>

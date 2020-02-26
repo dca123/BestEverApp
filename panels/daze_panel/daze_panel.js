@@ -33,9 +33,9 @@ export default class Rules extends React.Component {
     //Getting the current date-time with required formate and UTC
     var expirydate;
     if (moment().isAfter('2020-03-14T00:00:00')) {
-      expirydate = '2021-03-11 00:00:00';//You can set your own date-time
+      expirydate = '2021-03-12 00:00:00';//You can set your own date-time
     } else {
-      expirydate = '2020-03-12 00:00:00';//You can set your own date-time
+      expirydate = '2020-03-13 00:00:00';//You can set your own date-time
     }
     //Let suppose we have to show the countdown for above date-time
 
@@ -45,11 +45,11 @@ export default class Rules extends React.Component {
     var hours = parseInt(diffr.asHours());
     var minutes = parseInt(diffr.minutes());
     var seconds = parseInt(diffr.seconds());
-    var days = parseInt(diffr.days()) + 1;
+    var years = moment(expirydate).year() - 1908;
     var d = hours * 60 * 60 + minutes * 60 + seconds;
     //converting in seconds
 
-    that.setState({ totalDuration: d, days: days });
+    that.setState({ totalDuration: d, year: years });
     //Settign up the duration of countdown in seconds to re-render
   }
 
@@ -61,15 +61,15 @@ export default class Rules extends React.Component {
           until={this.state.totalDuration}
           //duration of countdown in seconds
           //on Press call
-          size={35}
+          size={90}
 
           digitTxtStyle={{color: '#4cbb17'}}
           digitStyle={{backgroundColor: '#FFF'}}
           timeLabelStyle={{color: '#4cbb17', fontWeight: 'bold'}}
-          timeLabels={{d: 'Daze', h: 'Hours', m: 'Minutes', s: 'Seconds'}}
-          timeToShow={['D','H','M','S']}
+          timeLabels={{d: 'DAZE', h: 'Hours', m: 'Minutes', s: 'Seconds'}}
+          timeToShow={['D']}
         />
-        <Text style={styles.daze_title}>Read {this.state.days} daze</Text>
+        <Text style={styles.daze_title}>till the {this.state.year}th Annual Best Ever St Pat's</Text>
       </View>
     );
 

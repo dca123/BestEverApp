@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Dimensions, FlatList, TouchableOpacity, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Dimensions, FlatList, TouchableOpacity, ScrollView, Platform } from 'react-native'
 import { Constants } from 'expo'
 import styles from './calendar_styles'
 import axios from 'axios'
@@ -39,7 +39,7 @@ export default class Calendar extends React.Component {
 
   componentDidMount () {
     axios
-      .get(`https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/Calendar!A2:F?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`)
+      .get(`https://sheets.googleapis.com/v4/spreadsheets/1Z-Sv-zqberGZB0nGmaLoL5wmk9fqPLbbnihsh6jZVhg/values/Calendar!A2:H?key=AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc`)
       .then((response) => {
         this.setState({
           events: response.data.values
@@ -77,6 +77,11 @@ export default class Calendar extends React.Component {
   renderEvents () {
     return (
       Array.from(this.state.todays_events).map((event, i) => {
+        if (Platform.OS === 'android' ) {
+           telNumber =  "tel:${" + event[7] + "}";
+         } else {
+           telNumber = "telprompt:${" + event[7] + "}";
+         }
         return (
           <EventCard
             name = {event[0]}
@@ -86,6 +91,8 @@ export default class Calendar extends React.Component {
             locationLink = {event[4]}
             details = {event[5]}
             key = {i + event[1]}
+            cName = {event[6]}
+            cNumber = {telNumber}
           ></EventCard>
         )
       })

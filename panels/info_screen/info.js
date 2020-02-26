@@ -39,6 +39,7 @@ export default class InfoScreen extends React.Component {
             Maneesh Gona{"\n"}
           </Text>
           Delta Sigma Phi{"\n"}
+          Computer Science and Computer Engineering{"\n"}
           KMNR - MC Mardi Gras{"\n"}
           EcoMiners{"\n"}
           20's BB

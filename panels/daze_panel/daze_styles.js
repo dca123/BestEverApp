@@ -7,7 +7,7 @@ export default StyleSheet.create({
     backgroundColor: '#EBF2FA'
   },
   daze_title:{
-    fontSize: 12,
+    fontSize: 20,
     color: '#4cbb17',
     fontStyle: 'italic',
     fontWeight: 'bold',

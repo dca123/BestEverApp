@@ -62,5 +62,16 @@ export default StyleSheet.create({
   },
   bold: {
     fontWeight: 'bold'
+  },
+  cardLink:{
+    color: '#96e6b3',
+    fontSize: 15,
+    fontWeight: 'bold',
+    fontStyle: 'italic'
+  },
+  cardLinkTitle:{
+    color: '#ffffff',
+    fontSize: 15,
+    marginTop: 5
   }
 })

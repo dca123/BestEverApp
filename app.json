@@ -10,7 +10,10 @@
       "slug": "be-app",
       "sdkVersion": "34.0.0",
       "ios": {
-      "bundleIdentifier": "com.patsboard.bestever"
+        "bundleIdentifier": "com.patsboard.bestever",
+        "config" :{
+          "googleMapsApiKey": "AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc"
+        }
         },
       "android": {
         "package": "com.patsboard.bestever",
