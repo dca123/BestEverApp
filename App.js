@@ -14,8 +14,7 @@ import { createStackNavigator } from "react-navigation";
 // Components
 import Calendar from "./panels/calendar/calendar_panel";
 import Daze from "./panels/daze_panel/daze_panel";
-import Score from "./panels/scoreboard/score_panel";
-import NonGreek from "./panels/scoreboard/nongreek_panel";
+import Leaderboard from "./panels/scoreboard/score_panel";
 import InfoScreen from "./panels/info_screen/info";
 
 // Styles
@@ -33,8 +32,7 @@ class HomeScreen extends React.Component {
       index: 0,
       routes: [
         { key: "daze", title: "DAZE" },
-        { key: "score", title: "All Scores" },
-        { key: "nongreek", title: "Non Greek" },
+        { key: "leaderboard", title: "Leaderboard" },
         { key: "calendar", title: "Calendar" }
       ]
     };
@@ -122,8 +120,7 @@ class HomeScreen extends React.Component {
           navigationState={this.state}
           renderTabBar={this._renderTabBar}
           renderScene={SceneMap({
-            score: Score,
-            nongreek: NonGreek,
+            leaderboard: Leaderboard,
             calendar: Calendar,
             daze: Daze
           })}

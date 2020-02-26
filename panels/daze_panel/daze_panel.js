@@ -3,10 +3,7 @@ import axios from 'axios'
 import { View, Text, Image, ScrollView, RefreshControl, TouchableCapacity } from 'react-native'
 import { Collapse, CollapseHeader, CollapseBody } from 'accordion-collapse-react-native'
 // Styles
-import styles from './rules_styles'
-
-// Images
-import chevDown from '../../images/chev-down.png'
+import styles from './daze_styles'
 
 import CountDown from 'react-native-countdown-component';
 //import CountDown to show the timer
@@ -64,12 +61,15 @@ export default class Rules extends React.Component {
           until={this.state.totalDuration}
           //duration of countdown in seconds
           //on Press call
-          size={30}
+          size={35}
 
           digitTxtStyle={{color: '#4cbb17'}}
           digitStyle={{backgroundColor: '#FFF'}}
           timeLabelStyle={{color: '#4cbb17', fontWeight: 'bold'}}
+          timeLabels={{d: 'Daze', h: 'Hours', m: 'Minutes', s: 'Seconds'}}
+          timeToShow={['D','H','M','S']}
         />
+        <Text style={styles.daze_title}>Read {totalDuration} daze</Text>
       </View>
     );
 

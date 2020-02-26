@@ -59,7 +59,7 @@ export default class App extends React.Component {
         }>
 
         {/* House list */}
-        {this.state.houses && this.state.houses.map((house, i) => {
+        {this.state.houses && this.state.houses.slice(0,8).map((house, i) => {
           return (
             <HouseCard
               key={i}

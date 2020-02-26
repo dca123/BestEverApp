@@ -7,11 +7,12 @@ export default StyleSheet.create({
     backgroundColor: '#EBF2FA'
   },
   daze_title:{
-    fontSize: 40,
+    fontSize: 12,
     color: '#4cbb17',
+    fontStyle: 'italic',
     fontWeight: 'bold',
-    marginBottom: 80,
+    marginTop: 40,
     textAlign: "center"
-
     }
+
 })
