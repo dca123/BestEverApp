@@ -8,7 +8,7 @@ import {
   StatusBar,
   Image
 } from "react-native";
-import { TabView, TabBar, SceneMap } from "react-native-tab-view";
+import { TabView, TabBar, SceneMap, PagerScroll } from "react-native-tab-view";
 import { createStackNavigator } from "react-navigation";
 
 // Components
@@ -119,6 +119,7 @@ class HomeScreen extends React.Component {
           style={{
             flex: 30
           }}
+          renderPager={(props) => <PagerScroll {...props}/>}
           navigationState={this.state}
           renderTabBar={this._renderTabBar}
           renderScene={SceneMap({
