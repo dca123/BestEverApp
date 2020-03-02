@@ -11,19 +11,22 @@ export default StyleSheet.create({
   dayListContainer: {
     paddingBottom: 5,
     paddingTop: 15,
-    width: 20,
-    height: 60
+    // width: 20,
+    height: 60,
   },
   weekText:{
-    paddingTop: 25,
+    marginTop: 25,
     paddingLeft: 10,
-    width: 60
+    // width: 60,
+    flex:5,
+    height: 60,
   },
   dayList: {
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-end',
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    flexGrow: 1
+    alignItems: 'flex-end',
+    flexGrow: 1,
+    marginRight: 10
   },
   dayButton: {
     backgroundColor: '#568259',

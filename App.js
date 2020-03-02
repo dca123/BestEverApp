@@ -33,7 +33,7 @@ class HomeScreen extends React.Component {
       index: 0,
       routes: [
         { key: "daze", title: "DAZE" },
-        { key: "leaderboard", title: "Leaderboard" },
+        { key: "leaderboard", title: "Top 8" },
         { key: "calendar", title: "Calendar" },
         { key: "sales", title: "Merch" }
       ]
