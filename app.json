@@ -18,7 +18,7 @@
       "android": {
         "package": "com.patsboard.bestever",
         "permissions": [],
-        "versionCode": 3,
+        "versionCode": 4,
         "config": {
           "googleMaps": { "apiKey": "AIzaSyAWiQfbQSxDv2Agmxfq8yhVEEs_Dq99zdc" }
         }
