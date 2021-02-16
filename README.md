@@ -11,7 +11,7 @@
 - [Usage](#usage) 
 # Problem
 
-Every year, the community of Rolla celebrates the n^th^ Annual *Best Ever* St Pat's Celebration. This celebration has a multitude of events that happens over the week of Pat's around the town. Currently, the organizing body relies on using social media & word of mouth to let the community know about the events, their locations, and where official merchandise is sold. The event also has a competitive function where registered groups can compete in certain events organized by the organizing body. The groups earn points per event and the victor is proclaimed at the end of St Pat's to the group with the most points. However, until the last day of St Pat's, groups have no way of knowing their standing.
+Every year, the community of Rolla celebrates the <sup>th</sup> Annual *Best Ever* St Pat's Celebration. This celebration has a multitude of events that happens over the week of Pat's around the town. Currently, the organizing body relies on using social media & word of mouth to let the community know about the events, their locations, and where official merchandise is sold. The event also has a competitive function where registered groups can compete in certain events organized by the organizing body. The groups earn points per event and the victor is proclaimed at the end of St Pat's to the group with the most points. However, until the last day of St Pat's, groups have no way of knowing their standing.
 
 # Solution
 This mobile application aims to solve the above problems by providing a centralized platform to provide the participants of St Pat's with the most up-to-date information.
