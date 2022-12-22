@@ -11,7 +11,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^3.1.0",
     "jest-expo": "~34.0.1",
-    "react-native-scripts": "1.14.0",
+    "react-native-scripts": "1.14.1",
     "react-test-renderer": "16.3.1"
   },
   "main": "./node_modules/expo/AppEntry.js",
